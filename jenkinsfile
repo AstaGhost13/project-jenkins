@@ -4,21 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Construyendo el proyecto...'
-                // En PHP normalmente no se compila, pero puedes instalar dependencias:
+                echo 'Construyendo el proyecto'
                 sh 'composer install'
             }
         }
         stage('Test') {
             steps {
-                echo 'Ejecutando pruebas...'
+                echo 'Ejecutando pruebas'
                 sh './vendor/bin/phpunit --testdox'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Desplegando...'
-                // Aquí puedes usar rsync, SCP o Docker según tu entorno de pruebas
+                echo 'Desplegando'
                 sh './scripts/deploy.sh'
             }
         }
