@@ -2,7 +2,6 @@
 Proyecto de Gestion
 
 
-
 #Datos cambiado / Zhunio R Gia
 
 # Datos cambiados / Navarrete
@@ -10,4 +9,4 @@ Proyecto de Gestion
 
 # Datos cambiado / Sánchez
 
-
+# Datos cambiado / Mariscal
