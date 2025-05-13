@@ -111,7 +111,8 @@ class Sale {
     
     public function ventasPorCliente(): array {
         $db = Database::getInstance();
-        $stmt = $db->query("SELECT idCliente, COUNT(*) as total FROM ventas GROUP BY idCliente");
+        $stmt = $db->query("SELECT idCliente, COUNT(*) as total FROM ventas GROUP BY idCliente"
+        );
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 

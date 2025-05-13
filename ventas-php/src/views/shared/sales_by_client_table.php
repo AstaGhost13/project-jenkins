@@ -15,14 +15,20 @@ $ventasClientes = DashboardFunctions::obtenerVentasPorCliente();
                     <th>Total ventas</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php foreach($ventasClientes as $cliente) {?>
+           <tbody>
+                <?php if(empty($ventasClientes)): ?>
                     <tr>
-                        <td><?= $cliente->cliente ?></td>
-                        <td><?= $cliente->numeroCompras ?></td>
-                        <td>$<?= $cliente->total ?></td>
+                        <td colspan="3" class="text-center">No hay datos de ventas</td>
                     </tr>
-                <?php }?>
+                <?php else: ?>
+                    <?php foreach($ventasClientes as $cliente): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($cliente->cliente ?? 'Cliente desconocido') ?></td>
+                            <td><?= $cliente->numeroCompras ?? 0 ?></td>
+                            <td>$<?= number_format($cliente->total ?? 0, 2) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>

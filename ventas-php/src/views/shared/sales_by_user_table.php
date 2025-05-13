@@ -19,8 +19,8 @@ $ventasUsuarios = DashboardFunctions::obtenerVentasPorUsuario();
                 <?php foreach($ventasUsuarios as $usuario) {?>
                     <tr>
                         <td><?= $usuario->usuario ?></td>
-                        <td><?= $usuario->numeroVentas ?></td>
-                        <td>$<?= $usuario->total ?></td>
+                        <td><?= $usuario->total_ventas ?></td>
+                        <td>$<?= number_format($usuario->total_monto, 2) ?></td>
                     </tr>
                 <?php }?>
             </tbody>
